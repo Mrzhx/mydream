@@ -1,9 +1,18 @@
 <template>
-  <Button>按钮示例一</Button>
+  <div :size="size">
+    <button v-bind="rest">
+      <slot />
+    </button>
+  </div>
 </template>
 
 <script lang="ts">
 export default {
-  name: "Buttom",
+  name: "Button",
+  inheritAttrs: false,
+  setup(props, context) {
+    const { size, ...rest } = context.attrs;
+    return { size, rest };
+  },
 };
 </script>

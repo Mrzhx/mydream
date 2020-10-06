@@ -1,12 +1,12 @@
 <template>
-  <div :size="size">
-    <button class="dream-button" :class="`dream-theme-${theme}`">
-      <slot />
-    </button>
-  </div>
+  <button class="dream-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="dream-loadingIndicator"></span>
+    <slot />
+  </button>
 </template>
 
 <script lang="ts">
+import { computed } from "vue";
 export default {
   name: "Button",
   inheritAttrs: false,
@@ -15,10 +15,33 @@ export default {
       type: String,
       default: "button",
     },
+    size: {
+      type: String,
+      default: "normal",
+    },
+    level: {
+      type: String,
+      default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props, context) {
-    const { size, ...rest } = context.attrs;
-    return { size, rest };
+    const { theme, size, level } = props;
+    const classes = computed(() => {
+      return {
+        [`dream-theme-${theme}`]: theme,
+        [`dream-size-${size}`]: size,
+        [`dream-level-${level}`]: level,
+      };
+    });
+    return { classes };
   },
 };
 </script>

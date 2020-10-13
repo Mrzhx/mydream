@@ -2,7 +2,7 @@
   <div class="topnav">
     <router-link to="/" class="logo">
       <svg class="icon">
-        <use xlink:href="#icon-king"></use>
+        <use xlink:href="#icon-logo"></use>
       </svg>
     </router-link>
     <ul class="menu">
@@ -43,22 +43,25 @@ $color: #007974;
 .topnav {
   color: $color;
   display: flex;
-  padding: 16px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 999;
+  padding: 10px 48px;
   justify-content: center;
   align-items: center;
-
+  background-color: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease-in-out;
   > .logo {
     max-width: 6em;
     margin-right: auto;
 
     > svg {
-      width: 32px;
-      height: 32px;
+      width: 50px;
+      height: 50px;
+      color: #42b983;
     }
   }
 
@@ -69,6 +72,7 @@ $color: #007974;
 
     > li {
       margin: 0 1em;
+      font-size: 1.2em;
     }
   }
 
@@ -83,7 +87,7 @@ $color: #007974;
     background: fade-out(black, 0.9);
   }
 
-  @media (max-width: 500px) {
+  @media screen and (max-width: 500px) {
     > .menu {
       display: none;
     }
@@ -95,6 +99,11 @@ $color: #007974;
     > .toggleAside {
       display: inline-block;
     }
+  }
+}
+@media (max-width: 500px) {
+  .topnav {
+    background: #1f8785;
   }
 }
 </style>

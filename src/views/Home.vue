@@ -4,7 +4,7 @@
       <TopHeader />
       <div class="banner">
         <h1>Dream UI</h1>
-        <h2>一个面向学习者的 UI 框架</h2>
+        <h2>承载你梦想启航的地方</h2>
         <p class="actions">
           <a href="https://github.com/Mrzhx/mydream">GitHub</a>
           <router-link to="/doc">开始</router-link>
@@ -15,21 +15,21 @@
       <ul>
         <li>
           <svg>
-            <use xlink:href="#icon-vue"></use>
+            <use xlink:href="#icon-Vue"></use>
           </svg>
           <h3>基于 Vue 3</h3>
           <p>骄傲地使用了 Vue 3 Composition API</p>
         </li>
         <li>
           <svg>
-            <use xlink:href="#icon-ts"></use>
+            <use xlink:href="#icon-typescript"></use>
           </svg>
           <h3>基于 TypeScript</h3>
           <p>源代码采用 TypeScript 书写</p>
         </li>
         <li>
           <svg>
-            <use xlink:href="#icon-light"></use>
+            <use xlink:href="#icon-dengguang"></use>
           </svg>
           <h3>代码易读</h3>
           <p>每个组件的源代码都极其简洁</p>
@@ -54,10 +54,12 @@ $border-radius: 4px;
 $color: #007974;
 
 .topnavAndBanner {
+  background: rgb(163, 216, 244);
   background: linear-gradient(
-    145deg,
-    rgba(227, 255, 253, 1) 0%,
-    rgba(183, 233, 230, 1) 100%
+    190deg,
+    rgba(163, 216, 244, 1) 0%,
+    rgba(163, 216, 244, 1) 0%,
+    rgba(65, 174, 169, 1) 100%
   );
   clip-path: ellipse(80% 60% at 50% 40%);
 }

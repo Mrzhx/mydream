@@ -3,7 +3,7 @@
     <TopHeader toggleMenuButtonVisible class="nav" />
     <div class="content">
       <aside v-if="menuVisible">
-        <h2>文档</h2>
+        <h2>开发指南</h2>
         <ol>
           <li>
             <router-link to="/doc/intro">介绍</router-link>
@@ -15,19 +15,19 @@
             <router-link to="/doc/get-started">开始使用</router-link>
           </li>
         </ol>
-        <h2>组件列表</h2>
+        <h2>基础组件</h2>
         <ol>
           <li>
-            <router-link to="/doc/switch">Switch 组件</router-link>
+            <router-link to="/doc/switch">Switch 开关</router-link>
           </li>
           <li>
-            <router-link to="/doc/button">Button 组件</router-link>
+            <router-link to="/doc/button">Button 按钮</router-link>
           </li>
           <li>
-            <router-link to="/doc/dialog">Dialog 组件</router-link>
+            <router-link to="/doc/dialog">Dialog 弹出框</router-link>
           </li>
           <li>
-            <router-link to="/doc/tabs">Tabs 组件</router-link>
+            <router-link to="/doc/tabs">Tabs 切换</router-link>
           </li>
         </ol>
       </aside>
@@ -46,7 +46,7 @@ export default {
     TopHeader,
   },
   setup() {
-    const menuVisible = inject<Ref<boolean>>("menuVisible"); // get
+    const menuVisible = inject<Ref<boolean>>("menuVisible");
     return {
       menuVisible,
     };
@@ -68,9 +68,8 @@ $aside-index: 10;
 
   > .content {
     flex-grow: 1;
-    padding-top: 60px;
-    padding-left: 156px;
-
+    padding-top: 90px;
+    padding-left: 180px;
     @media (max-width: 500px) {
       padding-left: 0;
     }
@@ -92,19 +91,22 @@ $aside-index: 10;
 }
 
 aside {
-  background: lightblue;
-  width: 150px;
-  padding: 16px 0;
+  background: #fff;
+  width: 170px;
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 70px;
+  padding: 6.2em 0 0.6em 2.6em;
   height: 100%;
   z-index: $aside-index;
-
   > h2 {
     margin-bottom: 4px;
-    padding: 0 16px;
+    padding: 8px 0 8px 15px;
+    color: #455a64;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 28px;
+    text-align: left;
   }
 
   > ol {
@@ -113,10 +115,14 @@ aside {
         display: block;
         padding: 4px 16px;
         text-decoration: none;
+        color: #455a64;
+        font-size: 14px;
+        line-height: 28px;
       }
 
       .router-link-active {
-        background: white;
+        font-weight: bold;
+        color: #42b983;
       }
     }
   }
@@ -124,5 +130,11 @@ aside {
 
 main {
   overflow: auto;
+}
+@media (max-width: 500px) {
+  aside {
+    padding: 2em 1em;
+    border-right: 1px solid #f3f3f3;
+  }
 }
 </style>

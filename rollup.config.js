@@ -5,7 +5,9 @@ import dartSass from "sass";
 import { terser } from "rollup-plugin-terser";
 
 export default {
+  // 入口文件
   input: "src/lib/index.ts",
+  // 输出文件
   output: [
     {
       globals: {
@@ -23,6 +25,7 @@ export default {
       plugins: [terser()],
     },
   ],
+  // es 6 以下不支持
   plugins: [
     scss({ include: /\.scss$/, sass: dartSass }),
     esbuild({

@@ -2,13 +2,11 @@
 
 ```javascript
 // 安装依赖包
-npm i 
+npm i
 
 // 启动项目
-npm run devjs
+npm run dev
 ```
-
-
 
 ## 说明
 
@@ -17,4 +15,3 @@ npm run devjs
 - Vue 3
 - TypeScript
 - Rollup (打包上传至 npm )
-

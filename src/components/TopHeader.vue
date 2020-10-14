@@ -51,8 +51,7 @@ $color: #007974;
   padding: 10px 48px;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
+  // background-color: #fff;
   transition: background-color 0.3s ease-in-out;
   > .logo {
     max-width: 6em;
@@ -104,6 +103,7 @@ $color: #007974;
 @media (max-width: 500px) {
   .topnav {
     background: #1f8785;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
   }
 }
 </style>
